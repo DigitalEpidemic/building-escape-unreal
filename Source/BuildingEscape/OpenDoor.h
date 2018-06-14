@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "Engine/TriggerVolume.h"
 #include "OpenDoor.generated.h"
 
 
@@ -26,4 +27,12 @@ public:
 
 		
 	
+private:
+	// Read only [SerializeField]
+	UPROPERTY(VisibleAnywhere)
+	float OpenAngle = 90.0f;
+
+	// Same as [SerializeField] in Unity
+	UPROPERTY(EditAnywhere)
+	ATriggerVolume* PressurePlate;
 };
