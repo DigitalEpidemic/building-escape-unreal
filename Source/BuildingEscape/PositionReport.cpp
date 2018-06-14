@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "PositionReport.h"
+#include "GameFramework/Actor.h" // IWYU (Include What You Use) for faster compile time
 
 
 // Sets default values for this component's properties
@@ -19,8 +20,12 @@ void UPositionReport::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// ...
-	
+	// Pointers to AActor
+	FString ObjectName = GetOwner()->GetName(); 
+	FString ObjectPos = GetOwner()->GetTransform().GetLocation().ToString();
+
+	UE_LOG(LogTemp, Warning, TEXT("%s is at %s"), *ObjectName, *ObjectPos); // %s format operator ('*' dereferences the string)
+
 }
 
 
