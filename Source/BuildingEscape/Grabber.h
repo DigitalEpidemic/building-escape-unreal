@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "PhysicsEngine/PhysicsHandleComponent.h"
+#include "Components/InputComponent.h"
 #include "Grabber.generated.h"
 
 
@@ -27,7 +28,10 @@ public:
 
 
 private:
-	// How far the player can reach in cm
-	float Reach = 100.0f;
+	float Reach = 100.0f; // How far the player can reach in cm
 	UPhysicsHandleComponent* PhysicsHandle = nullptr; // Points to memory address 0
+	UInputComponent* InputComponent = nullptr;
+
+	// Raycast and grab what is in reach
+	void Grab();
 };
