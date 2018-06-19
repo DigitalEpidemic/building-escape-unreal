@@ -27,8 +27,6 @@ protected:
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-
-		
 	
 private:
 	// Same as [SerializeField] in Unity
@@ -43,7 +41,8 @@ private:
 
 	float LastDoorOpenTime;
 
-	AActor* ActorThatOpens; // Pawn inherits from Actor
-	AActor* Owner; // The owning door
+	AActor* Owner; // The owning 
 
+	// Returns total mass in kg
+	float GetTotalMassOfActorsOnPlate();
 };
