@@ -28,7 +28,7 @@ public:
 
 
 private:
-	float Reach = 100.0f; // How far the player can reach in cm
+	float Reach = 150.0f; // How far the player can reach in cm
 	UPhysicsHandleComponent* PhysicsHandle = nullptr; // Points to memory address 0
 	UInputComponent* InputComponent = nullptr;
 
